@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html style="background-color: black;">
+<head>
+  <title>Accueil</title>
+  <link rel="shortcut icon" href="1.png" type="png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    
+    .topnav {
+      background-color: black;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 10px; 
+      border-radius: 20px; 
+    }
+    
+    .topnav a {
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      border-radius: 20px;
+    }
+    
+    .topnav a:hover {
+      color: #aa0404;
+      transform: scale(1.1);
+    }
+    
+    .topnav a.active {
+      background-color: #aa0404;
+      color: white;
+    }
+    
+    .logo {
+      position: absolute;
+      left: 10px;
+    }
+    
+    .carousel {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-item {
+      min-width: 20%;
+      flex: 0 0 auto;
+      margin-right: 20px; /* Augmentation de la marge */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      position: relative; /* Ajout */
+    }
+
+    .carousel-item img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .carousel-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .carousel-item h3 {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: 5px 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 10px 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="logo">
+  <img src="1.png" alt="Logo" width="50%">
+</div>
+
+<div class="topnav">
+  <a class="active" href="Home.html">Accueil</a>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="panier.html">Panier</a>
+  <a href="compte.html">Compte</a>
+</div>
+
+<div class="carousel" style="padding-top:20px">
+    <h1 style="font-size: 25px;">Populaire</h1>
+  <div class="carousel-inner">
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+      <img src="populaire/Naruto.jpg" alt="Manga 1">
+      <h3>Naruto</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+      <img src="populaire/Démon slayer.jpg" alt="Manga 2">
+      <h3>Démon Slayer</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+      <img src="populaire/One piece.jpg" alt="Manga 3">
+      <h3>One Piece</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/Hunter X hunter.jpg" alt="Manga 4">
+        <h3>Hunter X Hunter</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/Spy.jpg" alt="Manga 5">
+        <h3>Spy x Family</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/JJK.jpg" alt="Manga 6">
+        <h3>Jujutsu Kaisen</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/Your name.jpg" alt="Manga 7">
+        <h3>Your Name</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/MHA.jpg" alt="Manga 8">
+        <h3>My Hero Academia</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/Death note.jpg" alt="Manga 9">
+        <h3>Death Note</h3>
+    </div>
+    <div class="carousel-item" onmouseenter="stopScroll()" onmouseleave="startScroll()">
+        <img src="populaire/TPN.jpg" alt="Manga 10">
+        <h3>The Promised Neverland</h3>
+    </div>
+</div>
+
+<script>
+  const carousel = document.querySelector('.carousel-inner');
+  let offset = 0;
+  let step = 30;
+  let interval;
+
+  const scroll = () => {
+    offset += step;
+    carousel.style.transform = `translateX(-${offset}%)`;
+    if (offset >= 100) {
+      offset = 0;
+    }
+  };
+
+  function stopScroll() {
+    clearInterval(interval);
+  }
+
+  function startScroll() {
+    interval = setInterval(scroll, 2000);
+  }
+
+  interval = setInterval(scroll, 2000);
+</script>
+
+</body>
+</html>
