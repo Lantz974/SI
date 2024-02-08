@@ -193,7 +193,7 @@
   const maxOffset = lastItemRect.right - carouselWidth + lastItem.offsetWidth;
 
   let offset = 0;
-  let step = 40;
+  let step = 80;
   let interval;
 
   const scroll = () => {
@@ -209,10 +209,10 @@
   }
 
   function startScroll() {
-    interval = setInterval(scroll, 2000);
+    interval = setInterval(scroll, 3000);
   }
 
-  interval = setInterval(scroll, 2000);
+  interval = setInterval(scroll, 3000);
 </script>
 
 
