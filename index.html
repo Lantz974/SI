@@ -199,7 +199,7 @@
   const scroll = () => {
     offset += step;
     if (offset > maxOffset) {
-      offset = maxOffset;
+      offset = 0; // Revenir au début
     }
     carousel.style.transform = `translateX(-${offset}px)`;
   };
@@ -214,5 +214,6 @@
 
   interval = setInterval(scroll, 2000);
 </script>
+
 </body>
 </html>
