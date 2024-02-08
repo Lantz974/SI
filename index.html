@@ -189,8 +189,8 @@
   const lastItemRect = lastItem.getBoundingClientRect();
   const carouselWidth = carousel.offsetWidth;
 
-  // Calcul du décalage maximal pour arrêter le défilement à la dernière image
-  const maxOffset = lastItemRect.right - carouselWidth;
+  // Calcul du décalage maximal en tenant compte de l'espacement entre les éléments
+  const maxOffset = lastItemRect.right - carouselWidth + lastItem.offsetWidth;
 
   let offset = 0;
   let step = 5;
@@ -214,6 +214,7 @@
 
   interval = setInterval(scroll, 2000);
 </script>
+
 
 </body>
 </html>
